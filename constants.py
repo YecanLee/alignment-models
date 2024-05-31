@@ -28,8 +28,8 @@ DROPOUT0 = 0.5 # Dropout-rate between encoding and hidden layer 1
 DROPOUT1 = 0.5 # Dropout-rate between hidden layer 1 and hidden layer 2
 DROPOUT2 = 0.5 # Dropout-rate after hidden layer 2
 LR = 0.00001  # Learning rate for Adam optimizer
-MAX_EPOCHS = 1  # Training Epochs
-CUDA_DEVICE = "cuda:2"  # GPU 
+MAX_EPOCHS = 10  # Training Epochs
+CUDA_DEVICE = "cuda:0"  # GPU 
 PATIENCE = 250
 OPTIMIZER = "Adam" # one of the following: "Adam" (used in the original model; uses LR), "DefaultAdam" (uses default lr), "SGD" (uses default lr and exponential lr scheduler), "RMSprop" (uses default lr), "Adagrad" (uses default lr)
 #####################################
@@ -37,7 +37,7 @@ OPTIMIZER = "Adam" # one of the following: "Adam" (used in the original model; u
 
 # Model file paths and names
 
-destination_folder1 = "/local/theresas/Models/results1_test_output"  # Destination folder for the trained model and metrics for extended model
+destination_folder1 = "./results1"  # Destination folder for the trained model and metrics for extended model
 destination_folder2 = "./results2"  # Destination folder for the trained model and metrics for base model
 destination_folder3 = "./results3"  # Destination folder for the trained model and metrics for cosine similarity baseline model
 destination_folder4 = "./results4"  # Destination folder for the heuristics for naive baseline model
@@ -49,7 +49,7 @@ prediction_file = "prediction.tsv"  # Testing results
 
 # Data file paths and names
 
-folder = "../fine-tuning/data"  # Dataset folder
-test_folder = "../fine-tuning/data" # Folder with the gold data for evaluation
+folder = "./data"  # Dataset folder
+test_folder = "./data" # Folder with the gold data for evaluation
 recipe_folder_name = "recipes"  # Folder containing recipes
 alignment_file = "alignments.tsv"  # Alignment file
