@@ -815,9 +815,9 @@ def fetch_split_action(action_token_id, parsed_recipe):
         return tagging_tokens
 
     line = parsed_recipe[0][token_id]
-
+    
     # Checking for intermediate action node
-    while line["xpos"].startswith("I"):
+    while line["xpostag"].startswith("I"):
 
         tagging_tokens.append(line["id"])
         token_id += 1
@@ -973,7 +973,7 @@ def fetch_child_node(action_token_id, parsed_recipe, device):
 
     for line in parsed_recipe[0]:
 
-        if line["xpos"].startswith("B") and (line["head"] == action_token_id or action_token_id in dependency_heads(line["deps"])): 
+        if line["xpostag"].startswith("B") and (line["head"] == action_token_id or action_token_id in dependency_heads(line["deps"])): 
 
             child_id = line["id"]
             child = [parsed_recipe[0][child_id - 1]["id"]]
@@ -1058,7 +1058,7 @@ def fetch_action_ids(parsed_recipe):
     for line in parsed_recipe[0]:
 
         # Checking for Action node
-        if line["xpos"].startswith("B-A"):
+        if line["xpostag"].startswith("B-A"):
             indices.append(line["id"])
 
     return indices
