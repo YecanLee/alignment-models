@@ -259,16 +259,14 @@ class Scorer(nn.Module):
         self.linear_classifier = nn.Sequential(
             nn.Linear(self.embedding_dim * feature_dim, hidden_dim1),  # Linear layer1
             nn.Sigmoid(),
-            nn.Dropout(dropout0)
+            nn.Dropout(dropout0),
             nn.Linear(hidden_dim1, hidden_dim2),  # Linear layer1
             nn.Sigmoid(),
-            nn.Dropout(dropout1)
+            nn.Dropout(dropout1),
             nn.Linear(hidden_dim2, output_dim),  # Linear layer1
             nn.Sigmoid(),
             nn.Dropout(dropout2)
-        ).to(
-            self.device
-        )  # MLP structure
+        ).to(self.device)  # Linear layer2
 
         # self.dropout = nn.Dropout(dropout) # Dropout
 
