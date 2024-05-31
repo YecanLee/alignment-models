@@ -57,7 +57,7 @@ from utils import (
 # from script main.py
 # no more function, merged ith train-related functions
 
-device = torch.device(CUDA_DEVICE if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 flair.device = device
     
 parser = argparse.ArgumentParser(description = """Automatic Alignment model""")
