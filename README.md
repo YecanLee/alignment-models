@@ -15,7 +15,7 @@ You can find all the requirements in the file `requirement.txt`. Please call `re
 - Python 3.7
 - Conllu 4.2.2
 - Matplotlib 3.3.2
-- Pandas 1.2.3
+- Pandas 1.1.0
 - Pytorch 1.7.1
 - Transformers 4.0.0
 - Flair 0.8.0.post1
@@ -95,8 +95,8 @@ Naive Model | `./results4`
 
 To train the model, run the following command from this directory:
 
-`python train.py [model_name] --embedding_name [embedding_name]`
-
+`python train.py [model_name] --embedding_name [embedding_name] --fold [a number between 1 and 10]`
+ 
 where `[model_name]` could be one of the following:
 - `Sequence` : Sequential Ordering of Alignments
 - `Cosine_similarity` : Cosine model (Baseline)
